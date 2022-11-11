@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
+    
+  <title>Cattyboard</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  body{
+    font-family: 'Lato', sans-serif;
+  }
+  .charts-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .charts-cont > .main-menu-cont{
+    display: flex;
+    flex-direction: column;
+    width: 2%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F0F0F0;
+    height: 100%;
+  }
+  .music-list-cont{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 98%;
+    /* padding: 2rem; */   
+
+  }
+  .music-info-cont{
+    display: flex;
+    background-color: #454545;
+    padding: 3rem 2rem;
+    color: white;
+  }
+  .music-info-cont > div:nth-child(2){
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .music-info-text > div:nth-child(1){
+    height: 90%;
+  }
+  .music-info-text > div:nth-child(1) > div{
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+  .music-info-text > div:nth-child(2){
+    display: flex;
+    align-items: center;
+  }
+  i{
+    cursor: pointer;
+    size:1rem;
+  }
+  .music-info-text > div:nth-child(2) > div{
+    margin: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .container > div:nth-child(1){
+    height:55rem
+  }
+  .container > div:nth-child(2){
+    height:7rem
+  }
+  .controller-cont{
+    display: flex;
+    background-color:rgb(68,104,155);
+  }
+  .controller-cont > .controller-music-info > div:nth-child(1) img{
+   width: 5rem;
+  }
+  .controller-music-info{
+    display: flex;
+    width: 50%;
+    padding: 1rem;
+  }
+  .controller-music-info > div:nth-child(2){
+    padding: 0.3rem 1rem;
+    font-size: 12px;
+    color: white;
+  }
+  .controller-cont > div:nth-child(2){
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    fill: white;
+  }
+  .music-list-table{
+    padding:1rem;
+  }
+  table{
+    width: 100%;
+    color: rgb(76, 74, 74);
+  }
+
+  table tr{
+    height:4rem;
+    border-radius: 6px;
+    border-collapse: collapse;
+  }
+  table tr:nth-child(2n){
+    background-color: #F0F0F0;
+    
+  }
+  table td{
+    padding-left: 1rem;
+  }
+  table td div{
+    width: 10rem;
+    height:2rem;
+    border:1px solid black;
+    display: flex;
+    padding:3px;
+    justify-self: center;
+    align-items: center;
+    color: blue;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="charts-cont">
+      <div class="main-menu-cont">
+        <div><i class="las la-bars"></i></div>
+        <div><i class="las la-home"></i></div>
+        <div><i class="las la-search"></i></div>
+        <div><i class="las la-volume-up"></i></div>
+        <div><i class="las la-user"></i></div>
+        <div><i class="las la-cog"></i></div>
+        
+        <div><i class="las la-spotify"></i></div>
+        <div><i class="las la-soundcloud"></i></div>
+      </div>
+      <div class="music-list-cont">
+        <div class="music-info-cont">
+          <div>
+            <img
+              src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg"
+              alt="cattyboardImg" />
+          </div>
+          <div class="music-info-text">
+            <div>
+              <h2>Cattyboard Top 100 Single Charts(11.06.36)</h2>
+              <div>
+                <p>Unknown Artist</p>
+                <p>2016.Charts.100songs</p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span><i class="las la-play"></i></span>
+                <span>Play All</span>
+              </div>
+              <div>
+                <span><i class="las la-plus"></i></span>
+                <span>Add to</span>
+              </div>
+              <div>
+                <span><i class="las la-ellipsis-h"></i></span>
+                <span>More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="music-list-table">
+              <table CELLSPACING=0>
+                  <tr>
+                    <td>1.One Dance</td>
+                    <td>Crake feat Catkid & Cyla</td>
+                    <td>2:54</td>
+                    <td>
+                      <div>CATTY CLOUD SYNC</div>
+                    </td>
+                  </tr>
+                <tr>
+                  <td>2.Panda</td>
+                  <td>Cattee</td>
+                  <td>4:06</td>
+                  <td>
+                    <div>CATTY CLOUD SYNC</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3. Can't Stop the Feeling!</td>
+                  <td>Catin Cimberlake</td>
+                  <td>3:56</td>
+                  <td>
+                    <div>CATTY CLOUD SYNC</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4. Work From Home</td>
+                  <td>Cat Harmony feat Colla</td>
+                  <td>3:34</td>
+                  <td>
+                    <div>CATTY CLOUD SYNC</div>
+                  </td>
+                </tr>
+              </table>
+        </div>
+      </div>
+    </div>
+    <div class="controller-cont">
+      <div class="controller-music-info">
+        <div>
+          <img
+            src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg"
+            alt="" />
+        </div>
+        <div>
+          <p>If it Aint Love</p>
+          <p>Catson Derulo</p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <i class="las la-step-backward"></i>
+        </div>
+        <div>
+          <i class="las la-play"></i>
+        </div>
+        <div>
+          <i class="las la-step-forward"></i>
+        </div>
+        <div>
+          <i class="las la-undo-alt"></i>
+        </div>
+        <div>
+          <i class="la la-random"></i>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
