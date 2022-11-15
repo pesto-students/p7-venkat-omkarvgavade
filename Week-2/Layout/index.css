@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background-image: repeating-linear-gradient(
+    #ada996,
+    #f2f2f2,
+    #dbdbdb,
+    #eaeaea
+  );
+  /* font-family: 'Lobster', cursive; */
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-image: repeating-linear-gradient(#bdc3c7, #2c3e50);
+}
+.author-text {
+  position: absolute;
+  top: 4em;
+  left: 62em;
+}
+.author-main-cont {
+  display: grid;
+  width: 100%;
+
+  grid-template-areas:
+    "authorContentHeading authorContentHeading"
+    "authorContent1 authorContent2"
+    "authorContentImg authorContent3"
+    "authorContentImg authorContent4";
+}
+.author-main-cont > div:nth-child(1) {
+  grid-area: authorContentHeading;
+}
+.author-main-cont > div:nth-child(2) {
+  grid-area: authorContent1;
+}
+.author-main-cont > div:nth-child(3) {
+  grid-area: authorContent2;
+}
+.author-main-cont > div:nth-child(4) {
+  grid-area: authorContentImg;
+}
+.author-main-cont > div:nth-child(5) {
+  grid-area: authorContent3;
+}
+.author-main-cont > div:nth-child(6) {
+  grid-area: authorContent4;
+}
+.author-main-cont > div {
+  padding: 3rem;
+}
+.author-content-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.author-content-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.author-content-img img {
+  width: 80%;
+}
+footer {
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-image: repeating-linear-gradient(#0f0c29, #302b63, #24243e);
+}
+footer h1{
+ font-size:7rem;
+ color: white;
+ font-style: oblique;
+}
+.author-login-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+}
+.author-login-form > div {
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 7px -6px 8px grey;
+  background-image: repeating-linear-gradient(#360033, #0b8793);
+  color: white;
+  padding: 1rem;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.title p {
+  width: 50%;
+}
+.title > div {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+form > div {
+  width: 100%;
+  height: 3rem;
+}
+.modify,
+.country {
+  display: flex;
+}
+.modify > label,
+.country > label {
+  width: 50%;
+}
+.modify > input,
+.country > select {
+  width: 50%;
+  height: 1rem;
+}
+
+.termsCondition {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.termsCondition > input {
+  width: 1rem;
+  height: 1rem;
+}
+.termsCondition > label {
+  margin-left: 1rem;
+}
+.termsCondition > label span {
+  color: darkblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sign-up-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-up-button > button {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-image: repeating-linear-gradient(
+    #03001e,
+    #7303c0,
+    #ec38bc,
+    #fdeff9
+  );
+  border: none;
+  color: white;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
