@@ -11,7 +11,7 @@ function createStack(){
             items.push(item);
         },
         getStack(){
-            return items;
+            return [...items]; //changing reference of array so that it can not be accessible
         },
         peek(){
             return items[items.length - 1];
