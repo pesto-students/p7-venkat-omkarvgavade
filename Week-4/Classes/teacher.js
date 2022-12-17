@@ -9,11 +9,13 @@ Person.prototype.initialize = function(name,age){
     this.age = age;
 };
 
-class Teacher extends Person {
-    teach(subject){
-      return `${this.name} is now teaching ${subject}`
+let Teacher = function (){
+    this.teach = function(subject){
+      return `${this.name} is now teaching ${subject}`;
     }
 }
+Teacher.prototype = Person.prototype;
+
 
 let him = new Teacher();
 him.initialize("omkar",45);
