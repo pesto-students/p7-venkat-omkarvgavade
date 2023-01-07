@@ -1,0 +1,60 @@
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 100px;
+  height: 100px;
+}
+.all-boxes {
+  display: grid;
+  grid-template-areas:
+    "r y"
+    "b g";
+}
+
+.redbox {
+  background-color: red;
+  grid-area: r;
+  transform-origin: top left;
+  transition: rotate 1s ease-in-out;
+}
+.all-boxes:hover .redbox {
+  rotate: z 90deg;
+}
+.greenbox {
+  background-color: green;
+  grid-area: g;
+  transform-origin: bottom right;
+  transition: rotate 1s ease-in-out;
+}
+.all-boxes:hover .greenbox {
+  rotate: z 90deg;
+}
+.bluebox {
+  background-color: blue;
+  grid-area: b;
+  transform-origin: bottom left;
+  transition: rotate 1s ease-in-out;
+}
+.all-boxes:hover .bluebox {
+  rotate: z -90deg;
+}
+.yellowbox {
+  background-color: yellow;
+  grid-area: y;
+  transform-origin: top right;
+  transition: rotate 1s ease-in-out;
+}
+.all-boxes > div {
+  z-index: 1;
+}
+.all-boxes:hover .yellowbox {
+  rotate: z -90deg;
+}
+.hello-world {
+  position: absolute;
+}
