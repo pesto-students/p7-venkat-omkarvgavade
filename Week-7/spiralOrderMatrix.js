@@ -37,4 +37,4 @@ let result2 = getSpiralOrderFromMatrix(mat2,mat2.length,mat2[0].length);
 console.log(result2);
 
 //Time Complexity :- O(n*m);
-//Space Complexity :- O(n*m)
+//Space Complexity :- O(n*m        )

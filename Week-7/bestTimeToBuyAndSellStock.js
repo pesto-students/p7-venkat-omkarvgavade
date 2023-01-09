@@ -13,4 +13,6 @@ function bestTimeToBuyAndSellStock(arr,l,profit){
 }
 
 console.log(bestTimeToBuyAndSellStock([7,1,5,3,6,4],0,0))
-console.log(bestTimeToBuyAndSellStock([7,6,4,3,1],0,0))
+console.log(bestTimeToBuyAndSellStock([7,6,4,3,1],0,0));
+
+//Time complexity = O(n^2)
