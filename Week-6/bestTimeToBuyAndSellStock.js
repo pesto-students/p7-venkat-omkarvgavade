@@ -1,18 +1,39 @@
-function bestTimeToBuyAndSellStock(arr,l,profit){
-    if(l<arr.length-1){
-        let stockBuy = arr[l];
-        for(let i=l+1;i<arr.length;i++){
-             if(arr[i]>stockBuy && arr[i]-stockBuy > profit){
-                profit = arr[i];
-             }
+
+function bestTimeToBuyAndSellStock(arr){
+  let stack = [-1];
+  let resultArray = [];
+  arr = arr.reverse();
+  let lastGreater = -1;
+  // using stack for finding next max greater element
+  for(let i = 0; i < arr.length; i++) {
+     while(stack[stack.length - 1] < arr[i] && stack[stack.length - 1]!=-1){
+        stack.pop();
+     }
+     if(stack.length>1){
+        lastGreater = stack[stack.length - 1];
+        let lastIndex = stack.length - 1;
+        while(stack[lastIndex] >= lastGreater && lastIndex >= 1){
+            lastGreater = stack[lastIndex];
+            lastIndex--;
         }
-        return bestTimeToBuyAndSellStock(arr,l+1,profit);
-    }else{
-        return profit;
+     }
+     if(stack.length>1){
+        resultArray.push(lastGreater)
+     }else{
+        resultArray.push(stack[stack.length-1])
+     }
+     stack.push(arr[i]);
+  }
+  let profit = 0;
+  for(let i = 0; i < resultArray.length; i++){
+    if(resultArray[i]!=-1 && Math.abs(resultArray[i]-arr[i])>profit){
+      profit = Math.abs(resultArray[i]-arr[i]);
     }
+  }
+  console.log(profit)
 }
+//Time complexity = O(n)   
 
-console.log(bestTimeToBuyAndSellStock([7,1,5,3,6,4],0,0))
-console.log(bestTimeToBuyAndSellStock([7,6,4,3,1],0,0));
 
-//Time complexity = O(n^2)
+bestTimeToBuyAndSellStock([7,1,5,3,6,4]);
+bestTimeToBuyAndSellStock([7,6,4,3,1]);
