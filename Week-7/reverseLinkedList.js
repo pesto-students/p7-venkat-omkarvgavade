@@ -1,4 +1,4 @@
-let SingleLinkedList = require('./LinkedList')
+let SingleLinkedList = require('../Week-7/LinkedList')
 
 function reverseLinkedList(list) {
     let ll = new SingleLinkedList(list[0])
