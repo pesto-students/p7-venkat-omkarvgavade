@@ -5,11 +5,18 @@ import { IconContext } from "react-icons/lib";
 import axios from "axios";
 import copy from "copy-to-clipboard";
 import { FaCopy } from "react-icons/fa";
-function UrlItem({ url, handleGetShortnedUrls }) {
+function UrlItem({ url, handleGetShortnedUrls,setUrls }) {
   const handleDeleteUrl = (id) => {
-    axios.delete("http://localhost:3004/urls/" + id).then((response) => {
-      handleGetShortnedUrls();
-    });
+    if(window.location.href.indexOf('localhost')>-1){
+      axios.delete("http://localhost:3004/urls/" + id).then((response) => {
+        handleGetShortnedUrls();
+      });
+    }else{
+       setUrls(prev=>prev.filter((el)=>{
+          return el.id!==id
+        })
+       )
+    }
   };
   const copyToClipboard = (url) => {
     copy(url);

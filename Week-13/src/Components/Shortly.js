@@ -8,10 +8,14 @@ import axios from "axios";
 function Shortly() {
   const [urls,setUrls] = useState([]);
   
-  const handleGetShortnedUrls = ()=>{
-    axios.get("http://localhost:3004/urls").then(({data})=>{
-       setUrls(data);
-    });
+  const handleGetShortnedUrls=(shortenedUrl)=>{
+    if(window.location.href.indexOf('localhost')>-1){
+      axios.get("http://localhost:3004/urls").then(({data})=>{
+        setUrls(data);
+     });
+    }else if(shortenedUrl){
+      setUrls(prev=>[...prev,shortenedUrl]);
+    }
   }
   useEffect(()=>{
     handleGetShortnedUrls();
@@ -21,8 +25,8 @@ function Shortly() {
       <Flex w="100%" justifyContent="center" alignItems="center" >
         <Box w="35%"></Box>
         <VStack  w="40%" p="2rem">
-          <UrlInput urls={urls} handleGetShortnedUrls={handleGetShortnedUrls}/>
-          <UrlsDisplay urls={urls} handleGetShortnedUrls={handleGetShortnedUrls}/>
+          <UrlInput urls={urls} setUrls={setUrls} handleGetShortnedUrls={handleGetShortnedUrls}/>
+          <UrlsDisplay urls={urls} setUrls={setUrls} handleGetShortnedUrls={handleGetShortnedUrls}/>
         </VStack>
         <Box w="35%"></Box>
       </Flex>
